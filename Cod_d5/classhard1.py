@@ -6,12 +6,14 @@ Created on Mon Apr 29 14:13:44 2019
 """
 
 class OurClass():
-
+    
     def __init__(self, name, location, size=0,members=None):
         self.name = name
         self.location = location
         self.size = size
         self.members = members
+        self.questions
+
         
         self.check_if_at_capacity()
         
@@ -37,7 +39,14 @@ class OurClass():
         else:
             self.at_capacity = False
             return True
-
+        
+    def get_questions(self):
+        return len(self.questions_asked)
+    
+    def get_num_questions_asked(self):
+        for member in self.members:
+            self.questions += member.get_questions()
+        return self.questions
         
         
 
